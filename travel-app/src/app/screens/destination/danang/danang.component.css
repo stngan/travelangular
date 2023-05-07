@@ -1,0 +1,28 @@
+#map {
+  width:500px;
+  height: 300px;
+  border: solid rgba(0, 0, 0, 0.468) 1px;
+
+
+}
+.angular-with-newlines {
+  white-space: pre-wrap;
+}
+
+table{
+
+  width: 100%;
+
+
+}
+tr{
+  line-height: 1.5;
+}
+.region-info-main{
+  font-size:25px;
+  font-weight: 700s;
+}
+h3{
+  padding-top: 2rem
+}
+

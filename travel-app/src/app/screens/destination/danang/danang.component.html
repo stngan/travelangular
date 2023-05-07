@@ -1,1 +1,122 @@
-<p>danang works!</p>
+{{ errMessage }}
+<!-- General Information -->
+<section class="info-section container">
+  <h1 class="title pb-3" style="padding-top: 72px;">{{ information.informationName }}</h1>
+  <section
+    class="container shadow p-5 mb-5 bg-white"
+    style="border-radius: 20px"
+  >
+    <div class="row d-flex align-self-start" style="margin-bottom: 50px">
+      <div class="generalinfo">
+        <div class="">
+          <h3 class="flex-grow-1 text-left pb-2">
+            {{ information.informationName }}
+          </h3>
+        </div>
+
+        <div class="d-flex">
+          <div
+            class="flex-grow-4 angular-with-newlines"
+            style="
+              text-align: justify;
+              max-width: 50rem;
+              padding-right: 50px;
+              font-size: 16px;
+              line-height: 1.5;
+            "
+          >
+            {{ information.informationContent }}
+          </div>
+          <div class="d-flex flex-column">
+            <!-- destination map -->
+            <div #map id="map"></div>
+            <!-- weather forecast card -->
+            <section>
+              <div class="container py-5 h-100">
+                <div
+                  class="row d-flex justify-content-left align-items-center h-100"
+                >
+                  <div class="col-md-8 col-lg-5 col-xl-4">
+                    <div
+                      class="card shadow-sm"
+                      style="color: #4b515d; width: 20rem; border-radius: 10px"
+                    >
+                      <div class="card-body p-4">
+                        <div class="d-flex">
+                          <h5 class="flex-grow-1">{{ city }}</h5>
+                          <h5>{{ currentDate | date : "dd/MM" }}</h5>
+                        </div>
+
+                        <div class="d-flex flex-column text-center mt-1">
+                          <div>
+                            <img src="{{ iconURL }}" width="120px" />
+                          </div>
+                          <span
+                            class="medium pb-2"
+                            style="color: #868b94; font-size: 1.2rem"
+                            >{{ summary }}</span
+                          >
+                        </div>
+
+                        <div class="d-flex align-items-end">
+                          <div
+                            class="flex-grow-1 h1 ms-1"
+                            style="font-size: 1.3rem"
+                          >
+                            <div>
+                              <i
+                                class="fa-solid fa-droplet"
+                                style="color: #384152"
+                              ></i
+                              ><span class="ms-1"> {{ humidity }}% </span>
+                            </div>
+                          </div>
+                          <h1
+                            class="display-6 mb-0 font-weight-bold mt-0"
+                            style="color: #1c2331; font-size: 3rem"
+                          >
+                            {{ temperature }}°F
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row d-flex align-seft-start" style="margin-bottom: 50px">
+      <div class="general-info">
+        <h3 class="flex-grow-1 text-left">Thông tin chung</h3>
+        <table>
+          <tr class="region-info-title" style="height: 50px">
+            <td>Múi giờ</td>
+            <td>Tiền tệ</td>
+            <td>Thời gian</td>
+          </tr>
+          <tr class="region-info-main">
+            <td>{{ information.timeZone }}</td>
+            <td>{{ information.currency }}</td>
+            <td>{{ information.travelTime }}</td>
+          </tr>
+          <tr style="color: #868b94">
+            <td>{{ information.timeNote }}</td>
+            <td>{{ information.currencyNote }}</td>
+            <td>{{ information.travelTimeNote }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- Q&A section -->
+<app-danang-faq></app-danang-faq>
+
+<!-- Top visited places -->
+<app-top-place-danang></app-top-place-danang>
+

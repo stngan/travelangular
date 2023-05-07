@@ -17,6 +17,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { DanangComponent } from './screens/destination/danang/danang.component';
 import { DalatComponent } from './screens/destination/dalat/dalat.component';
 import { NhatrangComponent } from './screens/destination/nhatrang/nhatrang.component';
+import { LocalWeatherComponent } from './components/local-weather/local-weather.component';
+import { DestinationMapComponent } from './components/destination-map/destination-map.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { DanangFaqComponent } from './components/faq/danang-faq/danang-faq.component';
+import { TopPlaceDanangComponent } from './components/top-place/top-place-danang/top-place-danang.component';
+// import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
+// import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+// import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+// import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+// import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+// import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+// import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+// import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+// import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+// import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+// import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+// import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+// import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+// import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+// import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { TopPlaceHcmComponent } from './components/top-place/top-place-hcm/top-place-hcm.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,12 +56,35 @@ import { NhatrangComponent } from './screens/destination/nhatrang/nhatrang.compo
     DestinationsNavComponent,
     DanangComponent,
     DalatComponent,
-    NhatrangComponent
+    NhatrangComponent,
+    LocalWeatherComponent,
+    DestinationMapComponent,
+    DanangFaqComponent,
+    TopPlaceDanangComponent,
+    TopPlaceHcmComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    // MdbAccordionModule,
+    // MdbCarouselModule,
+    // MdbCheckboxModule,
+    // MdbCollapseModule,
+    // MdbDropdownModule,
+    // MdbFormsModule,
+    // MdbModalModule,
+    // MdbPopoverModule,
+    // MdbRadioModule,
+    // MdbRangeModule,
+    // MdbRippleModule,
+    // MdbScrollspyModule,
+    // MdbTabsModule,
+    // MdbTooltipModule,
+    // MdbValidationModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

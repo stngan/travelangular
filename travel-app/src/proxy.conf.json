@@ -5,6 +5,27 @@
     "secure": true,
     "changeOrigin":true,
     "logLevel":"debug"
+  },
+  {
+    "context": ["/generalinformation"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/faq"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/topplaces"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
   }
 
 ]

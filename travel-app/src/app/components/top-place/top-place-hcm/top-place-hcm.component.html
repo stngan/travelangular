@@ -1,0 +1,33 @@
+<p>top-place-hcm works!</p>
+<p>{{errMessage}}</p>
+<table>
+  <tr *ngFor="let p of places">
+    <td>{{p.placeName}}</td>
+  </tr>
+</table>
+  <section class="container">
+    <div class="d-flex mt-4 justify-content-between">
+      <div class="card mb-3 shadow" style="max-width: 640px" *ngFor="let p of places">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img
+              src="{{p.placeImg}}"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">{{p.placeName}}</h5>
+              <p class="card-text">
+                {{p.placeContent}}
+              </p>
+              <p class="card-text">
+                <small class="text-muted"> Last updated now </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

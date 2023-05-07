@@ -1,0 +1,43 @@
+<p>local-weather works!</p>
+
+<section class="  p-0">
+  <div class="container m-0" style="max-width: 50rem; max-height: 50rem;">
+
+    <div class="row d-flex justify-content-left align-items-center h-100">
+      <div class="col-md-4 col-lg-6 col-xl-4">
+
+        <div class="card" style="color: #4B515D; width: 10rem; ">
+          <div class="card-body p-2 ">
+
+            <div class="d-flex h-25">
+              <h5 class="flex-grow-1 text-center">{{city}}</h5>
+            </div>
+
+            <div class="d-flex flex-column text-center mt-1 ">
+              <span class="small" style="color: #868B94">{{summary}}</span>
+              <div>
+                <img src="{{iconURL}}"
+                  width="80px">
+              </div>
+
+            </div>
+
+            <div class="d-flex align-items-end">
+              <div class="flex-grow-1 h1 ms-1" style="font-size: 0.8rem;">
+                <div><i class="fa-solid fa-droplet" style="color: #384152;"></i><span class="ms-1"> {{humidity}}% </span> </div>
+              </div>
+              <h6 class="display-6 mb-0 font-weight-bold mt-0 fs-2" style="color: #1C2331;">{{temperature}}°F</h6>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+

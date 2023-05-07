@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<!-- list top vitsited places -->
+<!-- <body>
+  <section class="container">
+    <div class="d-flex mt-4 justify-content-between">
+      <div class="card mb-3 shadow" style="max-width: 640px">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img
+              src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Data Structures</h5>
+              <p class="card-text">
+                A data structure is a storage that is used to store and organize
+                data.
+              </p>
+              <p class="card-text">
+                <small class="text-muted"> Last updated now </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 shadow" style="max-width: 640px">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img
+              src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Data Structures</h5>
+              <p class="card-text">
+                A data structure is a storage that is used to store and organize
+                data.
+              </p>
+              <p class="card-text">
+                <small class="text-muted"> Last updated now </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body> -->
+
+<!-- modal button -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button
+        class="btn btn-success d-flex"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        <p class="align-self-center m-0" style="padding-right: 3px">Xem thêm</p>
+        <ion-icon
+          class="align-self-center"
+          name="chevron-down-outline"
+        ></ion-icon>
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  The Modal
+  <div class="modal" id="myModal">
+    <div class="modal-dialog d-flex">
+      <div
+        class="modal-content p-2"
+        style="background-color: transparent; border: 0"
+      >
+        <div class="card p-4">
+          <img
+            class="card-img-top pb-4"
+            src=".\assets\homepage\cat-ba-island.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body p-0">
+            <h5 class="card-title">Dinh độc lập</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="closebtn">
+        <ion-icon
+          name="close-outline"
+          type="button"
+          class="btn btn-danger p-0"
+          data-dismiss="modal"
+          style="background-color: transparent; border: 0; font-size: 40px"
+        ></ion-icon>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Display data -->
+<!-- list top vitsited places -->
+{{ errMessage }}
+  <section class="container">
+    <h1 class="title pb-3" style="padding-top: 72px">Top địa điểm du lịch Đà Nẵng</h1>
+    <div class="d-flex flex-wrap mt-4 justify-content-between">
+      <div
+        class="card mb-3 shadow"
+
+        style="width: 640px"
+        *ngFor="let p of places.places ; let i = index"
+      >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <div class="fit">
+              <img
+                src="{{ p.placeImg }}"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-4">
+              <h5 class="card-title">{{ p.placeName }}</h5>
+              <p class="card-text text-secondary" id="card-text">
+                {{ p.placeContent }}
+              </p>
+              <p class="card-text">
+                <button
+                  class="btn btn-success d-flex p-0"
+                  data-toggle="modal"
+                  [attr.data-target]="'#place' + i"
+                >
+                  <p class="align-self-center m-0" style="padding-right: 3px">
+                    Xem thêm
+                  </p>
+                  <ion-icon
+                    class="align-self-center"
+                    name="chevron-down-outline"
+                  ></ion-icon>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<div class="container" *ngFor="let p of places.places,let i = index">
+  <!-- The Modal -->
+  <div class="modal"  [id]="'place' + i" >
+    <div class="modal-dialog d-flex">
+      <div
+        class="modal-content p-2"
+        style="background-color: transparent; border: 0"
+      >
+        <div class="card p-4">
+          <div class="place-img">
+            <img
+            class="card-img-top pb-4"
+            src="{{ p.placeImg }}"
+            alt="Card image cap"
+          />
+          </div>
+
+          <div class="card-body p-0">
+            <h5 class="card-title ">{{p.placeName}}</h5>
+            <p class="card-text pt-2" id="modal-text">
+             {{p.placeContent}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="closebtn">
+        <ion-icon
+          name="close-outline"
+          type="button"
+          class="btn btn-danger p-0"
+          data-dismiss="modal"
+          style="background-color: transparent; border: 0; font-size: 40px"
+        ></ion-icon>
+      </div>
+    </div>
+  </div>
+</div>
