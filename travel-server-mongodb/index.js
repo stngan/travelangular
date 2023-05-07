@@ -22,9 +22,9 @@ app.get("/", (req,res)=>{
 const {MongoClient, ObjectId} = require('mongodb')
 client = new MongoClient("mongodb://127.0.0.1:27017")
 client.connect()
-database = client.db("TravelApp")
+database = client.db("travelangular_dev")
 informationCollection = database.collection("GeneralInformation")
-faqCollecttion = database.collection("FAQ")
+faqCollecttion = database.collection("FAQsection")
 topCollection = database.collection("TopPlaces")
 
 // // //test get postman
