@@ -38,6 +38,7 @@ import { TopPlaceDanangComponent } from './components/top-place/top-place-danang
 // import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 // import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { TopPlaceHcmComponent } from './components/top-place/top-place-hcm/top-place-hcm.component';
+import { UseraccountComponent } from './screens/useraccount/useraccount.component';
 
 
 
@@ -62,6 +63,7 @@ import { TopPlaceHcmComponent } from './components/top-place/top-place-hcm/top-p
     DanangFaqComponent,
     TopPlaceDanangComponent,
     TopPlaceHcmComponent,
+    UseraccountComponent,
 
 
   ],

@@ -9,12 +9,14 @@ import { HanoiComponent } from './screens/destination/hanoi/hanoi.component';
 import { NhatrangComponent } from './screens/destination/nhatrang/nhatrang.component';
 import { DanangComponent } from './screens/destination/danang/danang.component';
 import { DalatComponent } from './screens/destination/dalat/dalat.component';
+import { UseraccountComponent } from './screens/useraccount/useraccount.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomeComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'support', component: SupportComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'useraccount', component: UseraccountComponent },
   {  path: 'signup', component: SignupComponent },
   { path: 'destinationHCM', component: HCMComponent},
   { path: 'destinationHANOI', component: HanoiComponent},
