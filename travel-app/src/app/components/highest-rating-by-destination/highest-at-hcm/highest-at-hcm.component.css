@@ -8,10 +8,9 @@
   -webkit-box-orient: vertical;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+button {
+  padding: 0 !important;
+  text-align: left !important;
 }
 
 .card {
