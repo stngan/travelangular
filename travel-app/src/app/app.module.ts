@@ -63,6 +63,7 @@ import { HanoiMapComponent } from './components/map/hanoi-map/hanoi-map.componen
 import { HcmMapComponent } from './components/map/hcm-map/hcm-map.component';
 import { DalatMapComponent } from './components/map/dalat-map/dalat-map.component';
 import { NhatrangMapComponent } from './components/map/nhatrang-map/nhatrang-map.component';
+import { VnMapComponent } from './components/map/vn-map/vn-map.component';
 
 
 
@@ -114,6 +115,7 @@ import { NhatrangMapComponent } from './components/map/nhatrang-map/nhatrang-map
     HcmMapComponent,
     DalatMapComponent,
     NhatrangMapComponent,
+    VnMapComponent,
 
 
 
