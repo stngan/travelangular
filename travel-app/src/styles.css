@@ -13,9 +13,9 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 0.8rem; }
 
-p {
+/* p {
   font-size: 12px
-}
+} */
 
