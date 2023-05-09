@@ -39,6 +39,11 @@ import { TopPlaceDanangComponent } from './components/top-place/top-place-danang
 // import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { TopPlaceHcmComponent } from './components/top-place/top-place-hcm/top-place-hcm.component';
 import { UseraccountComponent } from './screens/useraccount/useraccount.component';
+import { HighestAtHCMComponent } from './components/highest-rating-by-destination/highest-at-hcm/highest-at-hcm.component';
+import { HighestAtDanangComponent } from './components/highest-rating-by-destination/highest-at-danang/highest-at-danang.component';
+import { HighestAtDalatComponent } from './components/highest-rating-by-destination/highest-at-dalat/highest-at-dalat.component';
+import { HighestAtHanoiComponent } from './components/highest-rating-by-destination/highest-at-hanoi/highest-at-hanoi.component';
+import { HighestAtNhatrangComponent } from './components/highest-rating-by-destination/highest-at-nhatrang/highest-at-nhatrang.component';
 
 
 
@@ -64,6 +69,11 @@ import { UseraccountComponent } from './screens/useraccount/useraccount.componen
     TopPlaceDanangComponent,
     TopPlaceHcmComponent,
     UseraccountComponent,
+    HighestAtHCMComponent,
+    HighestAtDanangComponent,
+    HighestAtDalatComponent,
+    HighestAtHanoiComponent,
+    HighestAtNhatrangComponent,
 
 
   ],

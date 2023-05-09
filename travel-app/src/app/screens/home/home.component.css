@@ -1,0 +1,16 @@
+/* phần điểm đến hấp dẫn nhất */
+.btnExploreDestination {
+  color: var(--primary-color);
+  background: #FFF;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: 500;
+
+}
+.btnExploreDestination:hover {
+  color: #FFF;
+  background: var(--primary-color);
+  transition: 0.4s;
+}

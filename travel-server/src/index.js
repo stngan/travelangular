@@ -41,28 +41,7 @@ app.listen(port, () => {
 const cors = require("cors");
 app.use(cors());
 
-let database = [
-  {
-    BookId: "b1",
-    BookName: "Kỹ thuật lập trình cơ bản",
-    Price: 70,
-    image: "b1.jpg",
-  },
-  {
-    BookId: "b2",
-    BookName: "Kỹ thuật lập trình nâng cao",
-    Price: 100,
-    image: "b2.jpg",
-  },
-  { BookId: "b3", BookName: "Máy học cơ bản", Price: 200, image: "b3.jpg" },
-  { BookId: "b4", BookName: "Máy học nâng cao", Price: 300, image: "b4.png" },
-  {
-    BookId: "b5",
-    BookName: "Lập trình Robot cơ bản",
-    Price: 250,
-    image: "b5.jpg",
-  },
-];
+
 
 let destinations = [
   {
@@ -86,9 +65,6 @@ let destinations = [
     destiName: "Nha Trang",
   },
 ];
-
-
-
 
 app.get("/destinations", cors(), (req, res) => {
   res.send(destinations);
