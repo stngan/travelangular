@@ -177,13 +177,14 @@
   }
 }
 
-body#faq {
-  padding-top: 500px;
+#faq {
+  margin-bottom: 100px;
+  /* padding-top: 500px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #f5f8ff;
+  /* min-height: 100vh; */
+  /* background: #f5f8ff; */
 }
 
 .container2 {

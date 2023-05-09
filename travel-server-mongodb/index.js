@@ -20,7 +20,7 @@ app.get("/", (req,res)=>{
 
 // //connect to my mongoDB database
 const {MongoClient, ObjectId} = require('mongodb')
-client = new MongoClient("mongodb://127.0.0.1:27017")
+client = new MongoClient("mongodb://0.0.0.0:27017")
 client.connect()
 database = client.db("travelangular_dev")
 informationCollection = database.collection("GeneralInformation")
