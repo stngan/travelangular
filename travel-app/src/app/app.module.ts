@@ -44,6 +44,7 @@ import { HighestAtDanangComponent } from './components/highest-rating-by-destina
 import { HighestAtDalatComponent } from './components/highest-rating-by-destination/highest-at-dalat/highest-at-dalat.component';
 import { HighestAtHanoiComponent } from './components/highest-rating-by-destination/highest-at-hanoi/highest-at-hanoi.component';
 import { HighestAtNhatrangComponent } from './components/highest-rating-by-destination/highest-at-nhatrang/highest-at-nhatrang.component';
+import { AllvietnamComponent } from './components/allvietnam/allvietnam.component';
 
 
 
@@ -74,6 +75,7 @@ import { HighestAtNhatrangComponent } from './components/highest-rating-by-desti
     HighestAtDalatComponent,
     HighestAtHanoiComponent,
     HighestAtNhatrangComponent,
+    AllvietnamComponent,
 
 
   ],
