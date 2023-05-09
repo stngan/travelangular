@@ -12,8 +12,8 @@ export class HCMComponent {
   destinationName: any = "TP Hồ Chí Minh";
   public information:any
   public errMessage:string=''
-  public infoID='644e6574eb41b9ff1f1cf58a'
-  constructor(public inforservice: DestinationsService, private weatherservice: WeatherService){
+  public infoID='644e38173a219747ed022528'
+  constructor(public inforservice: DestinationsService){
 
     this.inforservice.getGeneralInformationID(this.infoID).subscribe({
       next:(data)=>{this.information=data},

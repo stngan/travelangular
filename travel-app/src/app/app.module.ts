@@ -45,6 +45,15 @@ import { HighestAtDalatComponent } from './components/highest-rating-by-destinat
 import { HighestAtHanoiComponent } from './components/highest-rating-by-destination/highest-at-hanoi/highest-at-hanoi.component';
 import { HighestAtNhatrangComponent } from './components/highest-rating-by-destination/highest-at-nhatrang/highest-at-nhatrang.component';
 import { AllvietnamComponent } from './components/allvietnam/allvietnam.component';
+import { VnGeneralInformationComponent } from './components/vn-general-information/vn-general-information.component';
+import { DalatWeatherForecastComponent } from './components/weather-forecast/dalat-weather-forecast/dalat-weather-forecast.component';
+import { HanoiWeatherForecastComponent } from './components/weather-forecast/hanoi-weather-forecast/hanoi-weather-forecast.component';
+import { HcmWeatherForecastComponent } from './components/weather-forecast/hcm-weather-forecast/hcm-weather-forecast.component';
+import { NhatrangWeatherForecastComponent } from './components/weather-forecast/nhatrang-weather-forecast/nhatrang-weather-forecast.component';
+import { DanangWeatherForecastComponent } from './components/weather-forecast/danang-weather-forecast/danang-weather-forecast.component';
+import { TopPlaceDalatComponent } from './components/top-place/top-place-dalat/top-place-dalat.component';
+import { TopPlaceHanoiComponent } from './components/top-place/top-place-hanoi/top-place-hanoi.component';
+import { TopPlaceNhatrangComponent } from './components/top-place/top-place-nhatrang/top-place-nhatrang.component';
 
 
 
@@ -76,6 +85,22 @@ import { AllvietnamComponent } from './components/allvietnam/allvietnam.componen
     HighestAtHanoiComponent,
     HighestAtNhatrangComponent,
     AllvietnamComponent,
+    VnGeneralInformationComponent,
+    DalatWeatherForecastComponent,
+    HanoiWeatherForecastComponent,
+    HcmWeatherForecastComponent,
+    NhatrangWeatherForecastComponent,
+    DanangWeatherForecastComponent,
+    TopPlaceDanangComponent,
+    TopPlaceHcmComponent,
+    TopPlaceDalatComponent,
+    TopPlaceHanoiComponent,
+    TopPlaceNhatrangComponent,
+
+
+
+
+
 
 
   ],

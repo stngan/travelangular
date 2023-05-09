@@ -1,0 +1,22 @@
+
+.angular-with-newlines {
+  white-space: pre-wrap;
+}
+
+table{
+
+  width: 100%;
+
+
+}
+tr{
+  line-height: 1.5;
+}
+.region-info-main{
+  font-size:25px;
+  font-weight: 700s;
+}
+h3{
+  padding-top: 2rem
+}
+
