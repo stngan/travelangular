@@ -54,6 +54,11 @@ import { DanangWeatherForecastComponent } from './components/weather-forecast/da
 import { TopPlaceDalatComponent } from './components/top-place/top-place-dalat/top-place-dalat.component';
 import { TopPlaceHanoiComponent } from './components/top-place/top-place-hanoi/top-place-hanoi.component';
 import { TopPlaceNhatrangComponent } from './components/top-place/top-place-nhatrang/top-place-nhatrang.component';
+import { DanangLocationComponent } from './components/map/danang-location/danang-location.component';
+import { HanoiFaqComponent } from './components/faq/hanoi-faq/hanoi-faq.component';
+import { NhatrangFaqComponent } from './components/faq/nhatrang-faq/nhatrang-faq.component';
+import { HcmFaqComponent } from './components/faq/hcm-faq/hcm-faq.component';
+import { DalatFaqComponent } from './components/faq/dalat-faq/dalat-faq.component';
 
 
 
@@ -96,6 +101,11 @@ import { TopPlaceNhatrangComponent } from './components/top-place/top-place-nhat
     TopPlaceDalatComponent,
     TopPlaceHanoiComponent,
     TopPlaceNhatrangComponent,
+    DanangLocationComponent,
+    HanoiFaqComponent,
+    NhatrangFaqComponent,
+    HcmFaqComponent,
+    DalatFaqComponent,
 
 
 
