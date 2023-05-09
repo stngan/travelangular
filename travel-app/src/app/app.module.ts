@@ -59,6 +59,10 @@ import { HanoiFaqComponent } from './components/faq/hanoi-faq/hanoi-faq.componen
 import { NhatrangFaqComponent } from './components/faq/nhatrang-faq/nhatrang-faq.component';
 import { HcmFaqComponent } from './components/faq/hcm-faq/hcm-faq.component';
 import { DalatFaqComponent } from './components/faq/dalat-faq/dalat-faq.component';
+import { HanoiMapComponent } from './components/map/hanoi-map/hanoi-map.component';
+import { HcmMapComponent } from './components/map/hcm-map/hcm-map.component';
+import { DalatMapComponent } from './components/map/dalat-map/dalat-map.component';
+import { NhatrangMapComponent } from './components/map/nhatrang-map/nhatrang-map.component';
 
 
 
@@ -106,6 +110,10 @@ import { DalatFaqComponent } from './components/faq/dalat-faq/dalat-faq.componen
     NhatrangFaqComponent,
     HcmFaqComponent,
     DalatFaqComponent,
+    HanoiMapComponent,
+    HcmMapComponent,
+    DalatMapComponent,
+    NhatrangMapComponent,
 
 
 

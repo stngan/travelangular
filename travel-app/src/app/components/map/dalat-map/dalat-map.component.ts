@@ -3,11 +3,11 @@ import H from '@here/maps-api-for-javascript';
 import onResize from 'simple-element-resize-detector';
 
 @Component({
-  selector: 'app-danang-location',
-  templateUrl: './danang-location.component.html',
-  styleUrls: ['./danang-location.component.css']
+  selector: 'app-dalat-map',
+  templateUrl: './dalat-map.component.html',
+  styleUrls: ['./dalat-map.component.css']
 })
-export class DanangLocationComponent {
+export class DalatMapComponent {
   private map?: H.Map;
 
   @ViewChild('map') mapDiv?: ElementRef;
@@ -23,8 +23,8 @@ export class DanangLocationComponent {
         this.mapDiv.nativeElement, (layers as any).vector.normal.map,
         {
           pixelRatio: window.devicePixelRatio,
-          center: {lat: 10.762622, lng: 106.660172},
-          zoom: 4.753214837,
+          center: {lat: 11.9408626, lng: 108.4521295},
+          zoom: 6.753214837,
         },
       );
       onResize(this.mapDiv.nativeElement, () => {
@@ -38,7 +38,7 @@ export class DanangLocationComponent {
       new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
       const landmarks = [
-        {name: 'Ho Chi Minh City', lat: 16.047079, lng: 108.206230,  label: 'DaNang', },
+        {name: 'Da lat', lat: 11.9408626, lng: 108.4521295},
 
       ];
       landmarks.forEach(landmark => {
