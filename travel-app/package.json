@@ -22,6 +22,7 @@
     "@here/maps-api-for-javascript": "^1.41.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
+    "boxicons": "^2.1.4",
     "jquery": "^3.6.4",
     "mdb-angular-ui-kit": "^4.1.0",
     "rxjs": "~7.8.0",
