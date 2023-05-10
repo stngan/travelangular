@@ -7,6 +7,7 @@ import { DestinationsService } from 'src/app/services/destinations.service';
   styleUrls: ['./hanoi.component.css']
 })
 export class HanoiComponent {
+  destinationName: any = "Hà Nội";
   public information:any
   public errMessage:string=''
   public infoID='6450de49aabc04d20d85d0f6'

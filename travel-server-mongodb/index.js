@@ -20,7 +20,8 @@ app.get("/", (req,res)=>{
 
 // //connect to my mongoDB database
 const {MongoClient, ObjectId} = require('mongodb')
-client = new MongoClient("mongodb://127.0.0.1:27017")
+
+client = new MongoClient("mongodb://localhost:27017")
 client.connect()
 database = client.db("travelangular_dev")
 informationCollection = database.collection("GeneralInformation")
@@ -28,7 +29,7 @@ faqCollecttion = database.collection("FAQsection")
 topCollection = database.collection("TopPlaces")
 
 //Connect Mongo DB of MH
-database1 = client.db("WEB-REVIEW");
+database1 = client.db("travelangular_dev");
 post = database1.collection("ReviewData");
 user =database1.collection("User");
 activity = database1.collection("Activity");

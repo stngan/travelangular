@@ -1,4 +1,5 @@
 export interface Idestinations {
   destiID: string,
-  destiName: string
+  destiName: string,
+  destiImageDesc: string
 }

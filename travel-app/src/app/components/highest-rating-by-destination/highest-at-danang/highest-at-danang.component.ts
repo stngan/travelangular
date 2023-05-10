@@ -4,8 +4,8 @@ import { PostOMHService } from 'src/app/services/post-omh.service';
 
 @Component({
   selector: 'app-highest-at-danang',
-  templateUrl: './highest-at-danang.component.html',
-  styleUrls: ['./highest-at-danang.component.css']
+  templateUrl: '../highest-at-hcm/highest-at-hcm.component.html',
+  styleUrls: ['../highest-at-hcm/highest-at-hcm.component.css']
 })
 export class HighestAtDanangComponent {
   posts: any;

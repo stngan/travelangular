@@ -60,5 +60,9 @@ export class AllvietnamComponent {
     this.regionShow=regionShow
     this.region=region
   }
+  showPostDetails(p:any)
+  {
+    this.router.navigate(['post', p._id])
+  }
 
 }

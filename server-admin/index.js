@@ -24,11 +24,11 @@ app.listen(port,()=>{
 
 
 const { MongoClient, ObjectId } = require( 'mongodb');
-client = new MongoClient("mongodb://127.0.0.1:27017");
+client = new MongoClient("mongodb://localhost:27017");
 client.connect();
 
 database = client.db("FashionData");
-database1 = client.db("WEB-REVIEW");
+database1 = client.db("travelangular_dev");
 
 fashionCollection = database.collection("Fashion");
 post = database1.collection("ReviewData");

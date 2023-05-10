@@ -4,8 +4,8 @@ import { PostOMHService } from 'src/app/services/post-omh.service';
 
 @Component({
   selector: 'app-highest-at-nhatrang',
-  templateUrl: './highest-at-nhatrang.component.html',
-  styleUrls: ['./highest-at-nhatrang.component.css']
+  templateUrl: '../highest-at-hcm/highest-at-hcm.component.html',
+  styleUrls: ['../highest-at-hcm/highest-at-hcm.component.css']
 })
 export class HighestAtNhatrangComponent {
   posts: any;

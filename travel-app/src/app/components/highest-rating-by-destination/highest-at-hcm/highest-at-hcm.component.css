@@ -16,8 +16,11 @@ button {
 .card {
   margin-right: 20px;
   border-radius: 12px;
-  width: 274px;
+  width: 320px;
+  height: 380px;
   transition: all 0.2s;
+
+  margin-bottom: 20px;
 
 
 }
