@@ -26,6 +26,20 @@
     "secure": true,
     "changeOrigin": true,
     "logLevel":"debug"
+  },
+  {
+    "context": ["/posts-region"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/posts"],
+    "target": "http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 
 ]

@@ -87,9 +87,9 @@ app.delete("/posts-cmt/:id",cors(), async(req,res)=>{
 })
 app.get("/posts-region/:region",cors(), async(req,res)=>{
     const o_region = new RegExp(req.params.region,"i")
-    const result = await post.find({Post_Region:{$regex: o_region}}).toArray();
+    const result = await post.find({Post_Region:{$regex: o_region}}).sort({"Post_Interact.Post_Like":-1}).limit(4).toArray();
     res.send(result)
-})
+  })
 app.get("/posts-reacted/:User",cors(), async(req,res)=>{
     const o_id = new RegExp(req.params.user,"i")
     const result = await react.find({User_Id:{$regex: o_id}}).toArray();
