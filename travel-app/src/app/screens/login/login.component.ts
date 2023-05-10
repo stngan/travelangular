@@ -13,12 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LoginComponent {
   user = new Users();
-loginForm:any;
-cusInfo:any
+  loginForm:any;
+  cusInfo:any
   check = false
   emailExist=false
   userName = '';
-
+  account=new Users()
+  errMessage: string = '';
   constructor(private formBuilder: FormBuilder, private _service: LoginService, private router: Router, private route: ActivatedRoute, private _http:HttpClientModule){}
   // account
   //login nháp
@@ -30,6 +31,16 @@ cusInfo:any
         if (this.check) {
           localStorage.setItem('userEmail', aUser.userEmail);
           localStorage.setItem('isLoggedIn', 'true');
+
+          this._service.getAccount(aUser.userEmail).subscribe({
+            next: (data) => {
+              this.account = data;
+            },
+            error: (err) => {
+              this.errMessage = err;
+            },
+          });
+          localStorage.setItem("UiD",this.account._id)
           this._service.getUserName().subscribe({
             next: (data) => {
               this.userName = data.userName;
@@ -95,4 +106,5 @@ cusInfo:any
   SignIn() {
     this.router.navigate(['/signup']);
   }
+
 }

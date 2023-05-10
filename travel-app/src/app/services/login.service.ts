@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, throwError } from 'rxjs';
+import { Observable, catchError, map, retry, throwError } from 'rxjs';
+import { Users } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,22 @@ export class LoginService {
 checkEmailExists(email: string): Observable<boolean> {
   return this._http.get<any>(`/users/check-unexist/${email}`).pipe(
     map(res => res.exists as boolean),
+    catchError(this.handleError)
+  );
+}
+getAccount(email: string): Observable<any> {
+  const headers = new HttpHeaders().set(
+    'Content-Type',
+    'text/plain;charset=utf-8'
+  );
+
+  const requestOptions: Object = {
+    headers: headers,
+    responseType: 'text',
+  };
+  return this._http.get<any>('/user-getEmail/' + email, requestOptions).pipe(
+    map((res) => JSON.parse(res) as Users),
+    retry(3),
     catchError(this.handleError)
   );
 }

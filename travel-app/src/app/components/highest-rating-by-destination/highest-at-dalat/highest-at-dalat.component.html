@@ -4,7 +4,7 @@
     <div class="slide-content">
       <div class="card-wrapper swiper-wrapper">
         <div class="card swiper-slide" style="width: 18rem" *ngFor="let item of posts">
-          <button class="card" style="width: 18rem;" onclick="showPostDetails(item)">
+          <button class="card" style="width: 18rem;" (click)="showPostDetails(item)">
           <div
             class="card-image"
             style="background-image: url({{item.Post_Image}});

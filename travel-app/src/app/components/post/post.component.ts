@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IActivity } from 'src/app/interfaces/Activity';
 import { IReact } from 'src/app/interfaces/React';
 import { IPost } from 'src/app/interfaces/post';
+import { Users } from 'src/app/interfaces/user';
 import { PostOMHService } from 'src/app/services/post-omh.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { PostOMHService } from 'src/app/services/post-omh.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent {
+export class PostComponent implements OnInit{
+  account=new Users()
   posts: any;
   Acts:any
   post= new IPost()
@@ -35,7 +37,22 @@ export class PostComponent {
     )
 
   }
-
+  User = localStorage.getItem('userEmail')
+  ngOnInit() {
+    this.searchUser(this.User)
+    console.log(this.User)
+    console.log(this.account)
+  }
+  searchUser(u:any){
+    this._service.getAccount(u).subscribe({
+      next: (data) => {
+        this.account = data;
+      },
+      error: (err) => {
+        this.errMessage = err;
+      },
+    });
+  }
   assigns() {
     if (this.errMessage == ""){
       this.like = this.getReact.Act_react
