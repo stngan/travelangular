@@ -2,6 +2,7 @@ import { Component, OnInit,  } from '@angular/core';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/interfaces/user';
 import { AccountService } from 'src/app/services/account.service';
+import { PostOMHService } from 'src/app/services/post-omh.service';
 
 @Component({
   selector: 'app-useraccount',
@@ -12,13 +13,13 @@ export class UseraccountComponent  implements OnInit  {
   account=new Users()
   User = localStorage.getItem('userEmail')
   errMessage: string = '';
-  constructor(public _service: AccountService, public router: Router) {
+  constructor(public _service: PostOMHService, public router: Router) {
     if(this.User!=''){
       this.searchUser(this.User)
     }
   }
   ngOnInit() {
-   console.log(this.User)
+   console.log(this.account)
   }
   searchUser(u:any){
     this._service.getAccount(u).subscribe({

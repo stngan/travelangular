@@ -34,14 +34,14 @@
           <div class="comments-container" *ngFor="let item of Acts">
             <div class="comment-card">
               <img
-                src="{{ posts.Post_Image }}"
+                src="{{ item.User_avatar}}"
                 class="user-dp rounded-circle"
                 alt=""
               />
               <div class="comment-body">
 
                 <!--/{{userName}} -->
-                <p class="commnent"> <span style="margin-right: 5px; font-weight: bold;">@lkhslkdl </span>
+                <p class="commnent"> <span style="margin-right: 5px; font-weight: bold;">{{item.User_name}} </span>
                   {{ item.Act_cmt }}
 
                 </p>
@@ -107,6 +107,7 @@
               />
             </button>
           </div>
+
           <span class="bold">{{ posts.Post_Interact.Post_Like }} Likes</span>
         </div>
         <div *ngIf="cmtView; then cmt; else editCmt"></div>

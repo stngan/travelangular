@@ -23,25 +23,27 @@ export class PostComponent implements OnInit{
   like:boolean=false;
   cmtView:boolean=true;
   date:Date=new Date()
-  user:string = "644cb5fdacfae4e6dd6b4014"
+
   getReact:any
+  postID:string="";
   constructor(private _service: PostOMHService, private activateRoute: ActivatedRoute, private router:Router) {
     activateRoute.paramMap.subscribe((param) => {
       let id = param.get('id')
       if (id != null) {
         this.searchPost(id)
         this.searchCmt(id)
-        this.searchReact(id,this.user)
+
       }
     }
     )
 
   }
-  User = localStorage.getItem('userEmail')
+  user = localStorage.getItem('userEmail')
   ngOnInit() {
-    this.searchUser(this.User)
-    console.log(this.User)
+    console.log(this.postID)
+    this.searchUser(this.user)
     console.log(this.account)
+    this.searchReact(this.Act.Post_Id,this.account._id)
   }
   searchUser(u:any){
     this._service.getAccount(u).subscribe({
@@ -53,6 +55,9 @@ export class PostComponent implements OnInit{
       },
     });
   }
+  geti(i:any){
+    this.postID = i
+  }
   assigns() {
     if (this.errMessage == ""){
       this.like = this.getReact.Act_react
@@ -62,16 +67,24 @@ export class PostComponent implements OnInit{
   }
 
   Reacted(){
-    this.like=!this.like
-    if(this.like == true) {
-      this.posts.Post_Interact.Post_Like+=1;
-    } else {
-      this.posts.Post_Interact.Post_Like-=1;
+    if (this.account._id == null){
+      alert("bạn phải đăng nhập")
+
+    } else{
+      this.like=!this.like
+      if(this.like == true) {
+        this.posts.Post_Interact.Post_Like+=1;
+      } else {
+        this.posts.Post_Interact.Post_Like-=1;
+      }
     }
+
   }
   postReact(){
     if(this.like == true){
       if (window.confirm('confirm to save data?')){
+        this.React.User_Id = this.account._id
+        this.React.User_avatar = this.account.user_avatar
         this.React.Post_Id = this.posts._id
         this.React.Post_Address = this.posts.Post_Address
         this.React.Post_Category = this.posts.Post_Category
@@ -132,18 +145,23 @@ export class PostComponent implements OnInit{
     this.Act._id=id
   }
   putCmt(s:string) {
-    this.Act.Post_Id = this.posts._id
-    this.Act.Act_cmt = s;
-    this._service.putCMT(this.Act).subscribe({
-      next: (data) => {
-        this.Act = data;
-      },
-      error: (err) => {
-        this.errMessage = err;
-      },
-    });
-    location.reload()
-    this.cmtView = true;
+    if (this.account._id == this.Act.User_Id)
+    {
+      this.Act.Post_Id = this.posts._id
+      this.Act.Act_cmt = s;
+      this.Act.User_Id = this.account._id
+      this._service.putCMT(this.Act).subscribe({
+        next: (data) => {
+          this.Act = data;
+        },
+        error: (err) => {
+          this.errMessage = err;
+        },
+      });
+      location.reload()
+      this.cmtView = true;
+    } alert("Bạn không có quyền chỉnh sửa")
+
   }
   enablePost(cmt:string){
     if (cmt != ""){
@@ -156,7 +174,7 @@ export class PostComponent implements OnInit{
       error: (err) => {this.errMessage = err}
     })
   }
-  searchReact(PostId:string, UserId:string){
+  searchReact(PostId:string, UserId:any){
     this._service.getAReact(PostId,UserId).subscribe({
       next: (data) => {this.like = data.Act_react},
       error: (err) => {this.errMessage = err}
@@ -164,6 +182,9 @@ export class PostComponent implements OnInit{
   }
   postAC() {
     this.Act.Post_Id = this.posts._id
+    this.Act.User_Id = this.account._id
+    this.Act.User_name = this.account.userName
+    this.Act.User_avatar = this.account.user_avatar
     this._service.postAC(this.Act).subscribe({
       next: (data) => {
         this.post = data;
@@ -177,13 +198,16 @@ export class PostComponent implements OnInit{
     this.searchCmt(this.posts._id)
   }
   deleteCmt(_id:any){
-    if (window.confirm('confirm to delete?')){
-      this._service.deleteCmt(_id).subscribe({
-        next:(data)=>{this.Acts=data},
-        error:(err)=>{this.errMessage=err}
-      })
-    }
-    location.reload()
+    if (this.account._id == this.Act.User_Id){
+      if (window.confirm('confirm to delete?')){
+        this._service.deleteCmt(_id).subscribe({
+          next:(data)=>{this.Acts=data},
+          error:(err)=>{this.errMessage=err}
+        })
+      }
+      location.reload()
+    }alert("Bạn không có quyền xóa bình luận của người khác")
+
   }
   reverse(s:String) {
     var day='';
@@ -195,6 +219,6 @@ export class PostComponent implements OnInit{
    return  year+"/"+mon
   }
   goBack(){
-    this.router.navigate([''])
+    this.router.navigate(['/post'])
   }
 }
