@@ -11,6 +11,7 @@ import { DanangComponent } from './screens/destination/danang/danang.component';
 import { DalatComponent } from './screens/destination/dalat/dalat.component';
 import { UseraccountComponent } from './screens/useraccount/useraccount.component';
 import { PostComponent } from './components/post/post.component';
+import { DestinationMapComponent } from './components/destination-map/destination-map.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomeComponent },
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'destinationNHATRANG', component: NhatrangComponent},
   { path: 'destinationDANANG', component: DanangComponent},
   { path: 'destinationDALAT', component: DalatComponent},
-  { path: 'post/:_id', component: PostComponent},
+  { path: 'post/:id', component: PostComponent},
 ];
 
 @NgModule({
@@ -32,4 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents = [PostComponent]
+export const RoutingComponents = [PostComponent,DestinationMapComponent,HCMComponent,HanoiComponent,NhatrangComponent,DanangComponent,DalatComponent]

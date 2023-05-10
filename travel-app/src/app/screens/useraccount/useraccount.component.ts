@@ -1,5 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
 import { Router } from '@angular/router';
+import { Users } from 'src/app/interfaces/user';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./useraccount.component.css']
 })
 export class UseraccountComponent  implements OnInit  {
-  account: any;
+  account=new Users()
   User = localStorage.getItem('userEmail')
   errMessage: string = '';
   constructor(public _service: AccountService, public router: Router) {
@@ -30,9 +31,14 @@ export class UseraccountComponent  implements OnInit  {
     });
   }
   LogOut(){
-    localStorage.removeItem('userEmail')
-    localStorage.setItem('isLoggedIn', 'true');
-    this.router.navigate(['/homepage']);
+
+    if (window.confirm('Bạn có muốn đăng xuất?')){
+      localStorage.removeItem('userEmail')
+      localStorage.setItem('isLoggedIn', 'true');
+      this.router.navigate(['/homepage']);
+    }
+
   }
+
 
 }
