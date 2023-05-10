@@ -20,7 +20,7 @@ app.get("/", (req,res)=>{
 
 // //connect to my mongoDB database
 const {MongoClient, ObjectId} = require('mongodb')
-client = new MongoClient("mongodb://localhost:27017")
+client = new MongoClient("mongodb://127.0.0.1:27017")
 client.connect()
 database = client.db("travelangular_dev")
 informationCollection = database.collection("GeneralInformation")
@@ -51,7 +51,7 @@ app.get("/faq", cors(), async(req,res) => {
   res.send(result)
 })
 
-// //get general info by ID
+//get general info by ID
 app.get("/generalinformation/:id",cors(),async (req,res)=>{
     var o_id = new ObjectId(req.params.id);
     const result = await informationCollection.find({_id:o_id}).toArray();

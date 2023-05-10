@@ -64,7 +64,7 @@ import { HcmMapComponent } from './components/map/hcm-map/hcm-map.component';
 import { DalatMapComponent } from './components/map/dalat-map/dalat-map.component';
 import { NhatrangMapComponent } from './components/map/nhatrang-map/nhatrang-map.component';
 import { VnMapComponent } from './components/map/vn-map/vn-map.component';
-
+import {ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -128,7 +128,7 @@ import { VnMapComponent } from './components/map/vn-map/vn-map.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NoopAnimationsModule,
+    NoopAnimationsModule,ReactiveFormsModule
     // MdbAccordionModule,
     // MdbCarouselModule,
     // MdbCheckboxModule,

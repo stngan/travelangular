@@ -1,9 +1,16 @@
-export class IUser {
+export class Users {
   constructor(
-    public _id: any = null,
-    public  User_login :string="",
-    public User_Pass:string="",
-    public User_avatar:string="",
-    public User_lock: boolean = false,
-    ){}
-  }
+    public userName:string="",
+    public userEmail:string="",
+    public userPhone:string="",
+    public userGender:string="",
+    public userDescri:string="",
+    public password:string="",
+  ) {}
+}
+export class ForgotPassUsers {
+  constructor(
+    public customerEmail:string="",
+    public password:string="",
+  ) {}
+}
