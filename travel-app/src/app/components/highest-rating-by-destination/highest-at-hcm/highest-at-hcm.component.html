@@ -4,11 +4,11 @@
     <div class="slide-content">
       <div class="card-wrapper swiper-wrapper">
         <div class="card swiper-slide" style="width: 18rem" *ngFor="let item of posts">
+          <button class="card" style="width: 18rem;" onclick="showPostDetails(item)">
           <div
             class="card-image"
             style="background-image: url({{item.Post_Image}});
-            "
-          >
+            ">
 
         </div>
           <div class="card-body">
@@ -24,6 +24,7 @@
 
             <p>Từ {{item.Post_Pice}} đ</p>
           </div>
+        </button>
         </div>
       </div>
     </div>

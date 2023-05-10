@@ -1,1 +1,112 @@
-<p>post works!</p>
+<div ng-if="$ctrl.show">
+  <div >
+    <button class="btn-back" (click)="goBack()"><img src="/travel-app/src/assets/icon/cancel-removebg-preview.png"></button>
+  </div>
+  <div class="post">
+
+  <div class="post-feed">
+      <!-- <div class="post-overlays">
+          <img src="img/icon/red-heart.png" class="like-icon" alt="">
+          <div class="share-window">
+              <h1 class="title">share the post with others</h1>
+              <div class="share-link-container">
+                  <input type="text" id="share-link" value="#" disabled>
+                  <button class="copy-btn">copy</button>
+              </div>
+          </div>
+      </div> -->
+      <div class="post-img-container">
+          <img src="" alt="">
+      </div>
+  </div>
+
+
+  <div class="feed">
+    <!-- <div class="post-header">
+      <img src="img/user2.png" class="user-icon" alt="">
+      <p class="username">@modernweb</p>
+    </div> -->
+    <div class="post-detail">
+
+        <!-- <p class="username">{{selectPost.Post_Title}}</p> -->
+        <div class="post-des">
+          <!-- <p>{{selectPost.Post_TimeActive}}</p> --> <b> cmt hàng 31 -> 37</b>
+          <ul>
+              <!-- <li><i class='bx bxs-time-five'></i>{{selectPost.Post_TimeActive}}</li>
+              <li><i class='bx bx-money' ></i>{{selectPost.Post_Price}} + "/" + {{selectPost.Post_PriceUnit}}</li>
+              <li><i class='bx bxs-map' ></i>{{selectPost.Post_TimeActive}}</li> -->
+            </ul>
+        </div>
+
+        <div class="comments-container">
+            <div class="comment-card">
+              <img src="img/user1.png" class="user-dp"  alt="">
+              <div class="comment-body">
+                <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+              </div>
+            </div>
+            <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+              <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+              <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+              <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+              <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+              <div class="comment-card">
+                <img src="img/user1.png" class="user-dp"  alt="">
+                <div class="comment-body">
+                  <span class="username">@lkhslkdl</span> <!--/{{userName}} -->
+                  <p class="commnent">ạidaldlk</p> <!--/{{cmt}} -->
+                </div>
+              </div>
+        </div>
+
+        <div class="activity">
+          <div class="detail-intracables">
+            <img src="/travel-app/src/assets/icon/heart-nofill.png" class="like-btn" alt="">
+            <img src="/travel-app/src/assets/icon/send-nofill.png" class="send-btn" alt="">
+            <img src="/travel-app/src/assets/icon/comment-nofill.png" class="comment-btn" alt="">
+        </div>
+        <span class="likes">2.7k likes</span>
+        </div>
+        <div class="comment-box">
+
+            <input type="text" id="comment-input" placeholder="Add a comment">
+            <button class="add-comment-btn"><img src="/travel-app/src/assets/icon/comment-nofill.png" alt=""></button>
+        </div>
+
+
+    </div>
+  </div>
+  </div>
+</div>
+

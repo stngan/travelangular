@@ -22,5 +22,8 @@ export class HighestAtNhatrangComponent {
         },
       });
   }
-
+  showPostDetails(p:any)
+  {
+    this.router.navigate(['post', p._id])
+  }
 }
