@@ -44,6 +44,26 @@ import { HighestAtDanangComponent } from './components/highest-rating-by-destina
 import { HighestAtDalatComponent } from './components/highest-rating-by-destination/highest-at-dalat/highest-at-dalat.component';
 import { HighestAtHanoiComponent } from './components/highest-rating-by-destination/highest-at-hanoi/highest-at-hanoi.component';
 import { HighestAtNhatrangComponent } from './components/highest-rating-by-destination/highest-at-nhatrang/highest-at-nhatrang.component';
+import { AllvietnamComponent } from './components/allvietnam/allvietnam.component';
+import { VnGeneralInformationComponent } from './components/vn-general-information/vn-general-information.component';
+import { DalatWeatherForecastComponent } from './components/weather-forecast/dalat-weather-forecast/dalat-weather-forecast.component';
+import { HanoiWeatherForecastComponent } from './components/weather-forecast/hanoi-weather-forecast/hanoi-weather-forecast.component';
+import { HcmWeatherForecastComponent } from './components/weather-forecast/hcm-weather-forecast/hcm-weather-forecast.component';
+import { NhatrangWeatherForecastComponent } from './components/weather-forecast/nhatrang-weather-forecast/nhatrang-weather-forecast.component';
+import { DanangWeatherForecastComponent } from './components/weather-forecast/danang-weather-forecast/danang-weather-forecast.component';
+import { TopPlaceDalatComponent } from './components/top-place/top-place-dalat/top-place-dalat.component';
+import { TopPlaceHanoiComponent } from './components/top-place/top-place-hanoi/top-place-hanoi.component';
+import { TopPlaceNhatrangComponent } from './components/top-place/top-place-nhatrang/top-place-nhatrang.component';
+import { DanangLocationComponent } from './components/map/danang-location/danang-location.component';
+import { HanoiFaqComponent } from './components/faq/hanoi-faq/hanoi-faq.component';
+import { NhatrangFaqComponent } from './components/faq/nhatrang-faq/nhatrang-faq.component';
+import { HcmFaqComponent } from './components/faq/hcm-faq/hcm-faq.component';
+import { DalatFaqComponent } from './components/faq/dalat-faq/dalat-faq.component';
+import { HanoiMapComponent } from './components/map/hanoi-map/hanoi-map.component';
+import { HcmMapComponent } from './components/map/hcm-map/hcm-map.component';
+import { DalatMapComponent } from './components/map/dalat-map/dalat-map.component';
+import { NhatrangMapComponent } from './components/map/nhatrang-map/nhatrang-map.component';
+import { VnMapComponent } from './components/map/vn-map/vn-map.component';
 
 
 
@@ -74,6 +94,33 @@ import { HighestAtNhatrangComponent } from './components/highest-rating-by-desti
     HighestAtDalatComponent,
     HighestAtHanoiComponent,
     HighestAtNhatrangComponent,
+    AllvietnamComponent,
+    VnGeneralInformationComponent,
+    DalatWeatherForecastComponent,
+    HanoiWeatherForecastComponent,
+    HcmWeatherForecastComponent,
+    NhatrangWeatherForecastComponent,
+    DanangWeatherForecastComponent,
+    TopPlaceDanangComponent,
+    TopPlaceHcmComponent,
+    TopPlaceDalatComponent,
+    TopPlaceHanoiComponent,
+    TopPlaceNhatrangComponent,
+    DanangLocationComponent,
+    HanoiFaqComponent,
+    NhatrangFaqComponent,
+    HcmFaqComponent,
+    DalatFaqComponent,
+    HanoiMapComponent,
+    HcmMapComponent,
+    DalatMapComponent,
+    NhatrangMapComponent,
+    VnMapComponent,
+
+
+
+
+
 
 
   ],

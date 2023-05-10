@@ -1,5 +1,5 @@
-{{ errMessage }}
 <!-- General Information -->
+{{ errMessage }}
 <section class="info-section container">
   <h1 class="title pb-3" style="padding-top: 72px;">{{ information.informationName }}</h1>
   <section
@@ -29,61 +29,9 @@
           </div>
           <div class="d-flex flex-column">
             <!-- destination map -->
-            <div #map id="map"></div>
-            <!-- weather forecast card -->
-            <section>
-              <div class="container py-5 h-100">
-                <div
-                  class="row d-flex justify-content-left align-items-center h-100"
-                >
-                  <div class="col-md-8 col-lg-5 col-xl-4">
-                    <div
-                      class="card shadow-sm"
-                      style="color: #4b515d; width: 20rem; border-radius: 10px"
-                    >
-                      <div class="card-body p-4">
-                        <div class="d-flex">
-                          <h5 class="flex-grow-1">{{ city }}</h5>
-                          <h5>{{ currentDate | date : "dd/MM" }}</h5>
-                        </div>
-
-                        <div class="d-flex flex-column text-center mt-1">
-                          <div>
-                            <img src="{{ iconURL }}" width="120px" />
-                          </div>
-                          <span
-                            class="medium pb-2"
-                            style="color: #868b94; font-size: 1.2rem"
-                            >{{ summary }}</span
-                          >
-                        </div>
-
-                        <div class="d-flex align-items-end">
-                          <div
-                            class="flex-grow-1 h1 ms-1"
-                            style="font-size: 1.3rem"
-                          >
-                            <div>
-                              <i
-                                class="fa-solid fa-droplet"
-                                style="color: #384152"
-                              ></i
-                              ><span class="ms-1"> {{ humidity }}% </span>
-                            </div>
-                          </div>
-                          <h1
-                            class="display-6 mb-0 font-weight-bold mt-0"
-                            style="color: #1c2331; font-size: 3rem"
-                          >
-                            {{ temperature }}°F
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <app-danang-location></app-danang-location>
+            <!-- weather forecast -->
+            <app-danang-weather-forecast></app-danang-weather-forecast>
           </div>
         </div>
       </div>
@@ -114,9 +62,9 @@
   </section>
 </section>
 
-<!-- Q&A section -->
-<app-danang-faq></app-danang-faq>
-
 <!-- Top visited places -->
 <app-top-place-danang></app-top-place-danang>
+
+<!-- Q&A section -->
+<app-danang-faq></app-danang-faq>
 
