@@ -39,6 +39,7 @@ cusInfo:any
             },
           });
           this.router.navigate(['/homepage']);
+
         } else {
           console.log("error");
         }
@@ -46,7 +47,10 @@ cusInfo:any
     });
     // this.authService.login();
   }
-
+  //navigate
+  navMain(){
+    this.router.navigate(['/homepage']);
+  }
   // validator
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -72,8 +76,8 @@ cusInfo:any
     };
   }
   checkEmail() {
-    if (this.aUser.customerEmail) {
-      this._service.checkEmailExists(this.aUser.customerEmail).subscribe({
+    if (this.aUser.userEmail) {
+      this._service.checkEmailExists(this.aUser.userEmail).subscribe({
         next: (data) => {
           this.emailExist = !data;
           if (this.emailExist) {

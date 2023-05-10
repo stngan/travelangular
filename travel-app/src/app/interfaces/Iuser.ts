@@ -1,10 +1,10 @@
 export interface IUser {
-  customerEmail: string;
+  userEmail: string;
   password: string;
   }
   export class IUser {
     constructor(
-      public customerEmail:string="",
+      public userEmail:string="",
       public password:string=""
     ){}
   }

@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="./useraccount.component.css" />
   </head>
   <body>
+    {{errMessage}}
     <section class="py-5 my-5">
       <div class="container">
         <h1 class="mb-5">Quản Lý Tài Khoản</h1>
@@ -25,9 +26,9 @@
           <div class="profile-tab-nav border-right">
             <div class="p-4">
               <div class="img-circle text-center mb-3">
-                <img src="img/user2.jpg" alt="Image" class="shadow" />
+                <img src="{{account.user_avatar}}" alt="Image" class="shadow" />
               </div>
-              <h4 class="text-center">Ha Duy Thanh</h4>
+              <h4 class="text-center">{{account.userName}}</h4>
             </div>
             <div
               class="nav flex-column nav-pills"
@@ -83,18 +84,20 @@
                 <i class="fa fa-cogs text-center mr-1"></i>
                 Cài đặt hệ thống
               </a>
-              <a
-                class="nav-link"
+              <button
+                (click)="LogOut()"
+                class="nav-link btn-light"
                 id="logout-tab"
                 data-toggle="pill"
                 href="#logout"
                 role="tab"
                 aria-controls="logout"
                 aria-selected="false"
+
               >
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 Đăng xuất
-              </a>
+              </button>
             </div>
           </div>
           <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">

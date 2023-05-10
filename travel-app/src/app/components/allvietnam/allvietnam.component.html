@@ -1,1 +1,162 @@
-<p>allvietnam works!</p>
+<div class="container d-flex flex-row">
+  <div class="item">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class=" btn-light" style="font-size: 20px;;">
+            <div class="btn-group" style="margin-bottom: 10px;">
+              <button type="button" class="btn btn-light">{{regionShow}}</button>
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <button class="dropdown-item" (click)=" changeRegion('Hà Nội','Hannoi')">Hà Nội</button>
+                <button class="dropdown-item" (click)=" changeRegion('Đà Lạt','Dallat')">Đà Lạt</button>
+                <button class="dropdown-item" (click)=" changeRegion('Đà Nẵng','DaNang')">Đã Nẵng</button>
+                <button class="dropdown-item" (click)=" changeRegion('Hà Nội','Nha Trang')">Nha Trang</button>
+                <button class="dropdown-item" (click)=" changeRegion('Hà Nội','Hannoi')">Thành Phố Hồ Chí Minh</button>
+              </div>
+            </div>
+          </li>
+          <li class="btn btn-light">
+            <p style=" margin-top: 10px; font-size: large; width: 100%;">
+              Category
+            </p>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%" (click)="getRaCPost(region,'Food&Drink')">
+              <img
+                src="/assets/category/iconEatDrink.svg"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 32px; height: 32px"
+                data-holder-rendered="true"
+              />
+              <br />
+              Food&Drink
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%" (click)="getRaCPost(region,'Adventure')" >
+              <img
+                src="/assets/category/iconAdventure.svg"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 32px; height: 32px"
+                data-holder-rendered="true"
+              />
+              <br />
+              Adventure
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%"(click)="getRaCPost(region,'Accommodation')">
+              <img
+                src="/assets/category/iconHotel.svg"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 32px; height: 32px"
+                data-holder-rendered="true"
+              />
+              <br />
+              Accommodation
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%"(click)="getRaCPost(region,'Shopping')">
+              <img
+                src="/assets/category/iconShopping.svg"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 32px; height: 32px"
+                data-holder-rendered="true"
+              />
+              <br />
+              Shopping
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%"(click)="getRaCPost(region,'Art&Culture')">
+              <img
+                src="/assets/category/iconTour.svg"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 32px; height: 32px"
+                data-holder-rendered="true"
+              />
+              <br />
+              Art&Culture
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" style="width: 100%"(click)="getRPost(region)" >
+              <img
+                src="/assets/category/category.png"
+                data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1"
+                alt="32x32"
+                class="mr-2 rounded"
+                style="width: 35px; height: 35px; margin-right: 12px"
+                data-holder-rendered="true"
+              />
+              <br />
+              <span style="margin-right: 12px"> All category</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="item scrollspy-example" style="margin-left: 20px; font-size: 15px" data-spy="scroll" data-offset="0" >
+    <div class="table-responsive">
+      <p style="font-weight: bold;">Tìm thấy {{ post.length }} kết quả</p>
+
+    </div>
+    <div>
+      <div class="btn-group" style="margin-bottom: 10px;">
+        <button type="button" class="btn btn-primary">Tìm theo giá </button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <button class="dropdown-item" (click)=" filterMoney(region,category,0,50000)">0-50.000đ</button>
+          <button class="dropdown-item" (click)=" filterMoney(region,category,50000,100000)">50.000đ - 100.000đ</button>
+          <button class="dropdown-item" (click)=" filterMoney(region,category,100000,9999950000)">lớn hơn 100.000đ</button>
+        </div>
+      </div>
+    </div>
+    <div style="overflow-y: scroll; height: 700px; width: 1070px;;" class="slide-content">
+      <div class="row mb-6 ard-wrapper swiper-wrapper" >
+        <div class="col-md-3 card swiper-slide" *ngFor="let item of post">
+          <div
+          class="card-image"
+          style="background-image: url({{item.Post_Image}});
+          "
+        >
+
+      </div>
+        <div class="card-body">
+          <p class="card-category">{{item.Post_Category}}</p>
+
+          <h5 class="card-title limit-2">
+            {{item.Post_Title}}
+          </h5>
+
+          <p class="card-text limit-2">
+           {{item.Post_Content}}
+          </p>
+
+          <p>Từ {{item.Post_Pice}} đ</p>
+        </div>
+      </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+

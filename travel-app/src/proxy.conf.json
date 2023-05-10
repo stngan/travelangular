@@ -28,6 +28,20 @@
     "logLevel":"debug"
   },
   {
+    "context": ["/users"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/user-getEmail"],
+    "target":"http://localhost:3002",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  },
+  {
     "context": ["/posts-region"],
     "target":"http://localhost:3002",
     "secure": true,

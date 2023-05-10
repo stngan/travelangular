@@ -34,6 +34,9 @@ user =database1.collection("User");
 activity = database1.collection("Activity");
 react = database1.collection("Favorites") 
 // ----------------------------------------------//
+//Conect Mongodb of HH
+usersCollection = database1.collection("users")
+//------------------------------------
 // // //test get postman
 app.get("/generalinformation", cors(), async(req,res)=>{
   const result = await informationCollection.find({}).toArray()
@@ -78,7 +81,7 @@ app.get("/topplaces/:id",cors(),async (req,res)=>{
 
 //1. get post limit 6
 app.get("/posts", cors(), async (req,res)=>{
-  const result = await post.find({}).limit(6).sort({Post_DateCreated:'desc'}).toArray();
+  const result = await post.find({}).limit(8).sort({Post_DateCreated:'desc'}).toArray();
   res.send(result)
 })
 // get cmt 
@@ -205,3 +208,69 @@ app.put("/posts-cmt", cors(), async (req, res) => {
   res.send(result[0]);
 });
 // ---------------------all API of MH ---------------------
+//------------Xử lí Login/signup----------of HH>
+
+// Signup
+app.post("/users/signup", cors(), async(req, res)=>{
+  var crypto = require('crypto'); 
+  salt = crypto.randomBytes(16).toString('hex');
+  users =req.body
+  hash = crypto.pbkdf2Sync(users.password, salt, 1000, 64, `sha512`).toString(`hex`);
+  users.password = hash
+  users.salt = salt
+  await usersCollection.insertOne(users)
+  res.send(req.body)
+})
+
+// LogIn
+app.post("/users/login",cors(), async(req, res)=>{
+  const userEmail=req.body.userEmail
+  const password=req.body.password
+  const crypto = require('crypto');
+  const users = await usersCollection.findOne({userEmail: userEmail})
+  if(users==null)
+      res.send(false)
+  else
+  { 
+      hash = crypto.pbkdf2Sync (password, users.salt, 1000, 64, `sha512`).toString(`hex`); 
+      if(users.password==hash) 
+          res.send(true)           
+      else
+      res.send(false)
+  }
+}
+)
+// get user by email
+app.get("/user-getEmail/:mail",cors(), async(req,res)=>{
+  const o_mail = new RegExp(req.params.mail,"i")
+  const result = await usersCollection.find({userEmail:{$regex: o_mail}}).toArray();
+  res.send(result[0])
+})
+
+//api kiểm tra email không tồn tại
+app.get("/users/check-unexist/:email", cors(), async (req, res) => {
+  const email = req.params.email;
+  const result = await usersCollection.findOne({ userEmail: email });
+
+  if (result) {
+    res.send({ exists: true });
+  } else {
+    res.send({ exists: false });
+  }
+});
+
+//api kiểm tra email tồn tại
+app.get("/users/check-exist/:email", cors(), async (req, res) => {
+const email = req.params.email;
+const result = await usersCollection.findOne({ userEmail: email });
+
+if (result) {
+  res.send(false);
+} else {
+  res.send(true);
+}
+});
+
+
+
+//------------Xử lí Login/signup---------->
