@@ -62,8 +62,17 @@ throw new Error('Method not implemented.');
 
   postUsers(){
     this._service.postUsers(this.user).subscribe({
-      next:(data)=>{this.userInfo=data},
-      error:(err)=>{this.errMessage=err}
+      next:(data)=>{
+         this.userInfo = data;
+         // Show alert
+         alert('Signup success! Redirecting to login page..');
+
+         // Redirect to login page
+         this.router.navigate(['/login']);
+       },
+       error:(err)=>{
+         this.errMessage = err;
+       }
     })
   }
   LogIn(){
