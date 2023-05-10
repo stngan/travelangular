@@ -29,7 +29,7 @@
                            formControlName="email"
                            [class.is-invalid]="loginForm.controls['email'].invalid && loginForm.controls['email'].touched"
                            (blur)="checkEmail()"
-                           [(ngModel)]="aUser.customerEmail">
+                           [(ngModel)]="aUser.userEmail">
                            <label>Email</label>
                     <div *ngIf="loginForm.controls['email'].errors && (loginForm.controls['email'].invalid || loginForm.controls['email'].touched)">
                       <small class="text-danger" *ngIf="loginForm.controls['email'].errors['required']" [class.d-none]="loginForm.controls['email'].valid || loginForm.controls['email'].untouched">Email không được để trống</small>

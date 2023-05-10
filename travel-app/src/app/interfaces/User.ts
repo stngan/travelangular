@@ -6,6 +6,7 @@ export class Users {
     public userGender:string="",
     public userDescri:string="",
     public password:string="",
+    public user_avatar:string="assets/user.jpg"
   ) {}
 }
 export class ForgotPassUsers {
