@@ -22,5 +22,8 @@ export class HighestAtHanoiComponent {
         },
       });
   }
-
+  showPostDetails(p:any)
+  {
+    this.router.navigate(['post', p._id])
+  }
 }

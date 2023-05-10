@@ -22,6 +22,9 @@ export class HighestAtHCMComponent {
         },
       });
   }
-
+  showPostDetails(p:any)
+  {
+    this.router.navigate(['post', p._id])
+  }
 
 }
