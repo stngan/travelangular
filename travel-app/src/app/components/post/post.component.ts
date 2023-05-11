@@ -26,6 +26,7 @@ export class PostComponent implements OnInit{
 
   getReact:any
   postID:string="";
+  fromPage:string="";
   constructor(private _service: PostOMHService, private activateRoute: ActivatedRoute, private router:Router) {
     activateRoute.paramMap.subscribe((param) => {
       let id = param.get('id')
@@ -36,7 +37,9 @@ export class PostComponent implements OnInit{
       }
     }
     )
-
+    this.activateRoute.queryParams.subscribe(params => {
+      this.fromPage = params['from'];
+    })
   }
   user = localStorage.getItem('userEmail')
   ngOnInit() {
@@ -217,6 +220,6 @@ export class PostComponent implements OnInit{
    return  year+"/"+mon
   }
   goBack(){
-    this.router.navigate(['/post'])
+    this.router.navigate(['this.fromPage'])
   }
 }

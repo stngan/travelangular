@@ -1,3 +1,211 @@
+<style>
+  .welcome {
+    display: flex;
+    height: 340px;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+
+    border-radius: 12px;
+  }
+
+  .welcome__main::before {
+    background: linear-gradient(90deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) .01%, transparent 84%);
+    border-radius: 16px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .city_info {
+    color: #fff;
+    max-width: 710px;
+    padding: 40px 0 0 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .welcome__main img {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .welcome__sidebar img {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-size: contain;
+  }
+
+  .categoryNav {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .categoryItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    padding: 20px;
+
+    font-weight: 500;
+    color: #252525;
+    background: #FFF;
+
+  }
+
+  .categoryItem:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .08);
+    transform: translateY(-5px);
+    transition: all .3s;
+
+    cursor: pointer;
+  }
+
+  /* .categorySelect {
+    border: 1px solid var(--primary-color);
+    background: rgb(255, 254, 244);
+  } */
+
+  .categoryItem img {
+    width: 40%;
+    padding-bottom: 10px;
+  }
+</style>
+
+<div class="container">
+
+  <nav class="my-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/homepage">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{destinationName}}</li>
+    </ol>
+  </nav>
+
+  <div class="welcome-wrapper">
+    <div class="welcome">
+
+      <div class="welcome__main" style="width: 70%;   position: relative; height: 100%; margin-right: 5px;">
+        <img src="../../../../assets/destinations/HANOI/hanoi1.jpg">
+
+        <div class="city_info">
+          <h1>{{destinationName}}</h1>
+          <p>Khám phá điểm vui chơi, ưu đãi, kinh nghiệm du lịch {{destinationName}}</p>
+        </div>
+
+      </div>
+
+      <div class="welcome__sidebar" style="position: relative; width: 30%; height: 100%;">
+        <div class="sidebar__gallery" style="height: 50%; margin-bottom: 5px;
+
+        overflow: hidden;
+        position: relative;">
+          <img src="../../../../assets/destinations/HANOI/hanoi2.jpg" alt="">
+
+        </div>
+
+        <div class="sidebar__gallery" style="bottom: auto;
+        height: 50%;
+        position: relative;
+        right: auto;
+        width: 100%;">
+          <img src="../../../../assets/destinations/HANOI/hanoi3.jpg" alt="">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="categoryNav">
+
+    <ul class="nav row">
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconFoodDrink.png" alt="">
+          Food & Drink
+        </a>
+      </li>
+
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconAdventure.png" alt="">
+          Adventure
+        </a>
+      </li>
+
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconArt.png" alt="">
+          Art & Culture
+        </a>
+      </li>
+
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconShopping.png" alt="">
+          Shopping
+        </a>
+      </li>
+
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconAccommodation.png" alt="">
+          Accommodation
+        </a>
+      </li>
+
+      <li class="col-sm nav-item">
+        <a class="nav-link categoryItem" href="#">
+          <img src="../../../../assets/destinations/iconAll.png" alt="">
+          Tất cả các mục
+        </a>
+      </li>
+    </ul>
+  </div> -->
+
+  <div>
+    <h2 class="my-4">Trải nghiệm hấp dẫn ở {{destinationName}}</h2>
+
+    <div class="row">
+     <app-highest-at-hanoi></app-highest-at-hanoi>
+
+    </div>
+  </div>
+
+  <div>
+    <h2 class="my-4">Khám phá toàn bộ {{destinationName}}</h2>
+
+    <app-allvietnam></app-allvietnam>
+
+  </div>
+
+
+
+</div>
+
+
 <!-- General Information -->
 {{ errMessage }}
 <section class="info-section container">

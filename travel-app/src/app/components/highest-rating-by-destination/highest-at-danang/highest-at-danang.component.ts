@@ -4,8 +4,8 @@ import { PostOMHService } from 'src/app/services/post-omh.service';
 
 @Component({
   selector: 'app-highest-at-danang',
-  templateUrl: './highest-at-danang.component.html',
-  styleUrls: ['./highest-at-danang.component.css']
+  templateUrl: '../highest-at-hcm/highest-at-hcm.component.html',
+  styleUrls: ['../highest-at-hcm/highest-at-hcm.component.css']
 })
 export class HighestAtDanangComponent {
   posts: any;
@@ -24,6 +24,6 @@ export class HighestAtDanangComponent {
   }
   showPostDetails(p:any)
   {
-    this.router.navigate(['post', p._id])
+    this.router.navigate(['post', p._id],{ queryParams: { from: 'destinationDANANG' }})
   }
 }

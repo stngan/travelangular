@@ -8,6 +8,7 @@ import { DestinationsService } from 'src/app/services/destinations.service';
   styleUrls: ['./danang.component.css'],
 })
 export class DanangComponent {
+  destinationName: any = "Đà Nẵng";
   public information: any;
   public regionInfo: any;
   public errMessage: string = '';
