@@ -97,7 +97,7 @@ export class UpdatePostComponent implements OnInit {
   }
   searchPost(postId: string) {
     this._service.getAPost(postId).subscribe({
-      next: (data) => {this.posts = data},
+      next: (data) => {this.post = data},
       error: (err) => {this.errMessage = err}
     })
     console.log(this.posts)
@@ -179,5 +179,19 @@ export class UpdatePostComponent implements OnInit {
    mon = s.slice(5,7);
    year = s.slice(8,10)
    return  year+"/"+mon
+  }
+
+  putFashion() {
+    if (window.confirm('Xác nhận chỉnh sửa dữ liệu?')){
+      this._service.putPost(this.post).subscribe({
+        next: (data) => {
+          this.post = data;
+        },
+        error: (err) => {
+          this.errMessage = err;
+        },
+      });
+    }
+
   }
 }

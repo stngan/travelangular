@@ -116,8 +116,6 @@ export class PostComponent implements OnInit{
     } else {
       this.navDPost()
     }
-
-
   }
   navDPost(){
     this.router.navigate(['DPost'])

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { waitForAsync } from '@angular/core/testing';
+import { IPost } from '../Interfaces/post';
 
 @Component({
   selector: 'app-client-view',
@@ -10,8 +11,9 @@ import { waitForAsync } from '@angular/core/testing';
 })
 export class ClientViewComponent {
   posts: any;
+  post = new IPost()
   posts_Money=[{}];
-  public post:any;
+
   errMessage: string = '';
   public regionShow="Điểm Đến"
   public region=""
@@ -60,6 +62,31 @@ export class ClientViewComponent {
   changeRegion(regionShow:any, region:any){
     this.regionShow=regionShow
     this.region=region
+  }
+  onFileSelected(event: any, post: IPost) {
+    let file = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      post.Post_Image = reader.result!.toString();
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
+  postAPost() {
+    if (window.confirm('Xác nhận tạo mới bài viết?')){
+      this._service.postAPost(this.post).subscribe({
+        next: (data) => {
+          this.post = data;
+        },
+        error: (err) => {
+          this.errMessage = err;
+        },
+      });
+      location.reload()
+    }
+
   }
 
 }

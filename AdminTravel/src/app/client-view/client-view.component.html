@@ -1,4 +1,4 @@
-<div class="container d-flex flex-row">
+<!-- <div class="container d-flex flex-row">
   <div class="item">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
@@ -165,4 +165,74 @@
   </div>
 </div>
 
+ -->
+ <main role="main" class="container">
+  <!DOCTYPE html>
+  <html>
+  <title>W3.CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <body>
+
+  <div class="w3-card-4">
+    <div class="w3-container color-mh">
+      <h2>Tạo mới Post</h2>
+    </div>
+    <form class="w3-container" action="/action_page.php">
+      <p>
+      <label class="w3-text-brown"><b>Địa chỉ</b></label>
+      <input  [(ngModel)]="post.Post_Address" class="w3-input w3-border w3-sand" name="first" type="text"></p>
+      <p>
+      <label class="w3-text-brown"  ><b>Tiêu đề</b></label>
+      <input [(ngModel)]="post.Post_Title" class="w3-input w3-border w3-sand" name="last" type="text"></p>
+      <p>
+      <p>
+      <label class="w3-text-brown"><b>Content</b></label>
+      <input  [(ngModel)]="post.Post_Content" class="w3-input w3-border w3-sand" name="last" type="text"></p>
+      <p>
+        <p>
+          <label class="w3-text-brown"><b>Region</b></label>
+          <select  [(ngModel)]="post.Post_Region" class="w3-select" name="option">
+            <option value="Food&Drink" selected>Hà Nội</option>
+            <option value="Shopping">Đà Lạt</option>
+            <option value="Adventure">Nha Trang</option>
+            <option value="Art&Culture">Thành phố Hồ Chí Minh</option>
+            <option value="Accommodation">Đà Nẵng</option>
+          </select>
+          <p>
+      <p>
+      <label class="w3-text-brown"><b>Category</b></label>
+      <select  [(ngModel)]="post.Post_Category" class="w3-select" name="option">
+        <option value="Food&Drink" selected>Food&Drink</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Art&Culture">Art&Culture</option>
+        <option value="Accommodation">Accommodation</option>
+      </select>
+      <p>
+        <p>
+          <label class="w3-text-brown"><b>Thời gian hoạt động</b></label>
+          <input   [(ngModel)]="post.Post_TimeActive" class="w3-input w3-border w3-sand" name="last" type="text"></p>
+        <p>
+        <p>
+          <label class="w3-text-brown"><b>Ảnh</b></label>
+          <br>
+          <input
+          type="file"
+          class="file-input"
+          #name="ngModel"
+          name="fashion_image"
+          id="fashion_image"
+          [(ngModel)]="post.Post_Image"
+          (change)="onFileSelected($event, post)"
+        />
+        </p>
+        <p>
+      <button (click)="postAPost()" class="w3-btn w3-brown">Tạo mới</button></p>
+    </form>
+  </div>
+
+  </body>
+  </html>
+ </main>
 
